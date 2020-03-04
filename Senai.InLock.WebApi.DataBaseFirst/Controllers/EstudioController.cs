@@ -38,7 +38,7 @@ namespace Senai.InLock.WebApi.DataBaseFirst.Controllers
         [HttpPost]
         public IActionResult Post (Estudio novoEstudio)
         {
-            _estudioRepository.Cadastrar(novoEstudio));
+            _estudioRepository.Cadastrar(novoEstudio);
             return StatusCode(200);
         }
     }

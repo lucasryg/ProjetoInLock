@@ -6,24 +6,31 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Senai.InLock.WebApi.DataBaseFirst.Repositories
-{ 
-    public class EstudioRepository : IEstudioRepository
+{
+    public class JogoRepository : IJogoRepository
     {
         InLockContext ctx = new InLockContext();
 
-        public Estudio BuscarPorId(int id)
+        public Jogo BuscarPorId(int id)
         {
-            return ctx.Estudio.FirstOrDefault(e => e.IdJogo == id);
+            return ctx.Jogo.FirstOrDefault(e => e.IdJogo == id);
         }
 
         public void Cadastrar(Estudio novoEstudio)
         {
             ctx.Estudio.Add(novoEstudio);
-            ctx.SaveChanges();        }
+            ctx.SaveChanges();
+        }
 
-        public List<Estudio> Listar()
+        public void Cadastrar(Jogo novoJogo)
         {
-            return ctx.Estudio.ToList();
+            ctx.Jogo.Add(novoJogo);
+            ctx.SaveChanges();
+        }
+
+        public List<Jogo> Listar()
+        {
+            return ctx.Jogo.ToList();
         }
     }
 }

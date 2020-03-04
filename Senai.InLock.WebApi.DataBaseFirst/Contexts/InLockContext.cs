@@ -33,7 +33,7 @@ namespace Senai.InLock.WebApi.DataBaseFirst.Domains
         {
             modelBuilder.Entity<Estudio>(entity =>
             {
-                entity.HasKey(e => e.IdEstudio);
+                entity.HasKey(e => e.IdJogo);
 
                 entity.HasIndex(e => e.NomeEstudio)
                     .HasName("UQ__Estudio__112A5690FA20678A")
