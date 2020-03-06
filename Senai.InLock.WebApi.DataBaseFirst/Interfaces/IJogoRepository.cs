@@ -13,5 +13,9 @@ namespace Senai.InLock.WebApi.DataBaseFirst.Interfaces
         Jogo BuscarPorId(int id);
 
         void Cadastrar(Jogo novoJogo);
+
+        void Deletar(int id);
+
+        void Atualizar(int id, Jogo jogo);
     }
 }

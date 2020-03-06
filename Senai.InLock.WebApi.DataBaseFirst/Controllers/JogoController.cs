@@ -41,6 +41,20 @@ namespace Senai.InLock.WebApi.DataBaseFirst.Controllers
                 _jogoRepository.Cadastrar(novoJogo);
                 return StatusCode(200);
             }
-        }
+
+            [HttpDelete("{id}")]
+            public IActionResult Delete(int id)
+            {
+                _jogoRepository.Deletar(id);
+                return StatusCode(200);
+            }
+
+            [HttpPut("{id}")]
+            public IActionResult Atualizar(int id, Jogo jogo)
+            {
+                _jogoRepository.Atualizar(id, jogo);
+                return StatusCode(200);
+            }
+    }
     }
 

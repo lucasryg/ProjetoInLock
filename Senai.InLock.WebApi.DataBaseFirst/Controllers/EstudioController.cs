@@ -41,5 +41,19 @@ namespace Senai.InLock.WebApi.DataBaseFirst.Controllers
             _estudioRepository.Cadastrar(novoEstudio);
             return StatusCode(200);
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            _estudioRepository.Deletar(id);
+            return StatusCode(200);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Atualizar(int id, Estudio estudio)
+        {
+            _estudioRepository.Atualizar(id, estudio);
+            return StatusCode(200);
+        }
     }
 }
